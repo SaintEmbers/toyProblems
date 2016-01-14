@@ -9,6 +9,6 @@ Array.prototype.none = function (p) {
 };
 
 Array.prototype.any = function (p) {
-  return this.reduce(function(result, current)
+  return this.reduce( (result, current) =>
     result ? result : p(current), false);
 };
