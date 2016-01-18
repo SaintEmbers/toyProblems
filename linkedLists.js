@@ -18,3 +18,17 @@ function buildOneTwoThree() {
    var ll3 = push(ll2, 1)
    return ll3
 }
+
+
+//reverse a linked list set up as an array i.e. [1, [2, [3, null]]]
+function reverseList(list) {
+  var prev = null;
+  //var revList = list
+  while(list){
+    var next = list[1];
+    list[1] = prev;
+    prev = list;
+    list = next;
+  }
+  return prev
+}

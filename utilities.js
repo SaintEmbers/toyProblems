@@ -20,7 +20,7 @@ var make_available = function (fn) {
   return fn.bind.apply(fn, arguments);
 };
 
-//take out the vowels from a string
+//remove the vowels from a string
 function shortcut(string){
   return string.replace(/[aeiou]/g,'')
 }
