@@ -24,3 +24,22 @@ var make_available = function (fn) {
 function shortcut(string){
   return string.replace(/[aeiou]/g,'')
 }
+
+//return the last element of a list
+function last(list){
+ return list.length > 1 ? list[list.length -1] : arguments[arguments.length - 1];
+}
+
+
+//Write the definition of the function "say" such that calling this:
+//say("Hello")("World")
+//returns "Hello World"
+var say = function(string1) {
+  return function(string2){
+    return string1 +' '+ string2
+  }
+}
+
+
+
+
