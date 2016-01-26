@@ -41,5 +41,17 @@ var say = function(string1) {
 }
 
 
+//check if string is a valid palindrome
+var isPalindrome = function(s) {
+  s = s.replace(/[^a-z0-9]/gi,'').toLowerCase();
+  var i = 0, j = s.length - 1;
+  while(i < j){
+    if(s[i] !== s[j]){return false}
+    i++;
+    j--;
+  }
+  return true;
+};
+
 
 

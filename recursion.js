@@ -89,7 +89,6 @@ function connectFour(board) {
 // given an array of coin denominations.
 // For example, there are 3 ways to give change for 4 if you have coins with denomination 1 and 2...
 var countChange = function(money, coins) {
-  // your implementation here
   var counter = 0;
   coins.sort(function(a,b){return a-b});
   (function count(index, remainder){
