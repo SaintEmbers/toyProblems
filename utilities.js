@@ -53,5 +53,11 @@ var isPalindrome = function(s) {
   return true;
 };
 
+//check if number is power of 3
+var isPowerOfThree = function(n) {
+    if(n < 1){return false}
+    if(n === 1 || n === 3){return true}
+    return n%3 === 0 ? isPowerOfThree(n/3) : false
+};
 
 
