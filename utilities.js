@@ -60,4 +60,20 @@ var isPowerOfThree = function(n) {
     return n%3 === 0 ? isPowerOfThree(n/3) : false
 };
 
+//convert from decimal to binary
+function toBinary(n){
+  var bitstring = ""
+
+  while (n > 0 ){
+    var bit = n % 2;
+    n -= bit;
+    var quotient = n/2;
+    bitstring = bit + bitstring
+    n = quotient ;
+  }
+  return bitstring
+}
+
+
+
 

@@ -32,3 +32,18 @@ function reverseList(list) {
   }
   return prev
 }
+
+
+//delete a node
+var deleteNode = function(node) {
+    var val = node.next.val
+    var next = node.next.next
+    node.val = val
+    node.next = next
+};
+
+
+
+
+
+
