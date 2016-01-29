@@ -1,5 +1,6 @@
-//reverse a string in less than linear time
+//Utilities to deal with strings, numbers, and stuff
 
+//reverse a string in less than linear time
 var reverse = function(array) {
   var start = 0;
   var end = array.length - 1;
