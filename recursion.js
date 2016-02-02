@@ -1,3 +1,28 @@
+//Write a function called LCS that accepts two sequences,
+//and returns the longest subsequence common to the passed in sequences.
+//A subsequence is different from a substring.
+//The terms of a subsequence need not be consecutive terms of the original sequence.
+
+
+
+function LCS(x, y) {
+  if(x == '' || y == '') return '';
+
+  var currX = x.charAt(0), nextX = x.slice(1)
+  var currY = y.charAt(0), nextY = y.slice(1)
+
+  if(currX == currY)
+    return currX + LCS(nextX, nextY)
+
+  var lcs1 = LCS(x, nextY)
+  var lcs2 = LCS(nextX, y)
+
+  return (lcs1.length > lcs2.length) ? lcs1 : lcs2;
+}
+
+
+
+
 
 // Connect Four is a game in which two players take turns dropping red or yellow colored discs into a vertically suspended 7 x 6 grid.
 // Discs fall to the bottom of the grid, occupying the next available space.
