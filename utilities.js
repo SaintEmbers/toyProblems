@@ -95,5 +95,30 @@ var addDigits = function(num) {
 };
 
 
+//Check if a number is a power of tow
+function isPowerOfTwo(n){
+  //.. should return true or false .
+   while(n >= 1){
+     if(n%2 === 0){
+       n = n/2;
+     } else if(n === 1){
+     return true
+   } else{
+     return false
+   }
+
+}
+}
+
+//Also can do:
+
+function isPowerOfTwo(n){
+  if(n === 2){return true}
+  if(n < 2){return false}
+  return isPowerOfTwo(n)
+
+}
+
+
 
 
