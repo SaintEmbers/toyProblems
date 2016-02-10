@@ -1,4 +1,34 @@
 //Utilities to deal with strings, numbers, and stuff
+//find the length of the longest palindrome
+
+longestPalindrome=function(s){
+  var i = 0, z = s.length -1, longest = 0
+
+  for(var i = 0; i < s.length; i++){
+    for(var j = s.length; j >=i; j--){
+      var curr = s.slice(i, j)
+      if(palindromeCheck(curr)){
+        if(curr.length > longest){longest = curr.length}
+      }
+    }
+  }
+  return longest
+}
+
+function palindromeCheck(str){
+  var i = 0, z = str.length -1
+  while(i <= z){
+    if(str[i]!==str[z]){
+      return false
+    } else{
+      i++
+      z--
+    }
+  }
+  return true
+}
+
+
 
 //reverse a string in less than linear time
 var reverse = function(array) {
