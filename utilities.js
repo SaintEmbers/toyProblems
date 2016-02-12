@@ -1,4 +1,46 @@
 //Utilities to deal with strings, numbers, and stuff
+
+    /**
+     * Flattens a deeply nested object, `source`. Produces `output` which
+     * will be an object with dot-seperated paths pointing to all primative
+     * values from the `source`.
+     *
+     * Examples:
+     *
+     *   flatten({ foo: { bar: 1 } })
+     *     //=> { 'foo.bar': 1 }
+     *
+     *   flatten({ foo: [5, { bar: 2 }] })
+     *     //=> { 'foo.0.bar': 1, 'foo.1.bar': 2 }
+     *
+     * @param source {object}
+     * @returns {object}
+     */
+var flatten = function (source) {
+  // TODO: implement flatten function
+  var flattened = {}
+  var ind = 0
+  function makeFlat(curr, key){
+    if(typeof curr !== 'object'){
+      key = key.slice(0, key.length-1)
+      flattened[key] = curr
+      return
+    }
+
+    for(var keys in curr){
+
+      makeFlat(curr[keys], key + keys + '.')
+    }
+
+  }
+
+  makeFlat(source,'')
+  console.log(flattened)
+  return flattened
+}
+
+
+
 //find the length of the longest palindrome
 
 longestPalindrome=function(s){
