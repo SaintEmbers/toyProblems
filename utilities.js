@@ -1,4 +1,39 @@
 //Utilities to deal with strings, numbers, and stuff
+//permutations - total perms, sum of all the perms, max and min
+function sscForperm(arr){
+
+  var permDict = {}
+  var total = 0;
+  var totalSum = 0;
+  var maxScore = -Infinity;
+  var minScore = Infinity;
+
+  function permute(currArr, options){
+    if(currArr.length === arr.length){
+
+     if(!permDict[JSON.stringify(currArr)]){
+        permDict[JSON.stringify(currArr)] = true;
+        var sum = 0;
+        currArr.forEach((val,index) =>
+          sum += (index+1) * val
+        )
+        total++
+        totalSum += sum
+        maxScore = Math.max(maxScore, sum)
+        minScore = Math.min(minScore, sum)
+      }
+      return
+    }
+    for(var i = 0; i < options.length; i++){
+      permute(currArr.concat(options[i]), options.slice(0,i).concat(options.slice(i+1)))
+    }
+  }
+  permute([], arr)
+  return [{"total perm": total}, {"total ssc": totalSum}, {"max ssc": maxScore}, {"min ssc": minScore}]
+}
+
+
+
 
     /**
      * Flattens a deeply nested object, `source`. Produces `output` which
@@ -31,7 +66,6 @@ var flatten = function (source) {
 
       makeFlat(curr[keys], key + keys + '.')
     }
-
   }
 
   makeFlat(source,'')
